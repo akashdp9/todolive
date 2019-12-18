@@ -1,0 +1,70 @@
+header{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font: 800;
+    background-color: teal;
+    color: white;
+}
+
+
+.box1{
+    /* width: 1; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: flex-start;
+    /* background-color: burlywood; */
+    margin-top: 100px;
+}
+.box{
+
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 2px solid black; */
+    background-color: teal;
+
+}
+.box2{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: flex-start;
+    margin: 20px;
+    background-color:rgb(184, 238, 238);
+
+
+}
+.input{
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+}
+.field{
+    width: 300px;
+    height: 30px;
+    margin-top: 10px;
+}
+.btn{
+    width: 160px;
+    height: 50px;
+    margin-top: 50px;
+    margin-left: 150px;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    
+}

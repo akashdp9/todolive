@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {createTodo} from '../actions'
+import './todo.css'
 class TodoList extends Component{
     constructor(props){
         super(props);
@@ -33,9 +34,11 @@ class TodoList extends Component{
     renderList(){
         return this.props.items.map((item,index)=>{
             return(
-                <div key={index}>
+                <div className="rend">
+                <div className="run" key={index}>
                         {item.title}
-                        <button onClick={(event)=>this.delete(index)}>delete</button>
+                        <button className="del" onClick={(event)=>this.delete(index)}>delete</button>
+                </div>
                 </div>
                 );
         });
@@ -43,6 +46,9 @@ class TodoList extends Component{
     addItem(){
         const newList=[...this.props.items,{title:this.state.text}];
         this.props.createTodo(newList);
+        this.setState({
+            text: ''
+        });
     }
     resetList(){
         const list=[]
@@ -51,17 +57,27 @@ class TodoList extends Component{
     render(){
         return(
             <div>
+                <header className="head">
+                    TodoList
+                </header>
+                <div className="bdy">
                 {!this.state.isAuthenticated ? (
                   <h1> Please Login .........!!!!!!!!</h1>
                 ) : (
-                <div>
-                        <textarea value={this.state.text} onChange={(event)=>this.setState({text:event.target.value})} />
-        <button onClick={()=>this.addItem()}>Add</button>
-        <button onClick={(event)=>this.resetList()}>reset</button>
-        <button onClick={(event)=>this.sortedItems()}>sorted</button>
+                <div className="content">
+                       <div className="area"> <textarea value={this.state.text} onChange={(event)=>this.setState({text:event.target.value})}/></div>
+                       <div className="btn1">
+                            <div className="btn">
+                                <div ><button className="btn-grp" onClick={()=>this.addItem()}>Add</button></div>
+                                <div ><button className="btn-grp1" onClick={(event)=>this.resetList()}>reset</button></div>
+                                <div ><button className="btn-grp1" onClick={(event)=>this.sortedItems()}>sorted</button></div>
+                            </div>
+                        </div>
+                       
         {this.renderList()}
-            </div>
+        </div>
         )}
+            </div>
             </div>
         )
     }
